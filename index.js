@@ -9,13 +9,7 @@ const questions = [
         type:'input',
         name: 'name',
         message: 'What is your Name?'
-    },
-    
-     {
-       type:'input', 
-       name:'github',
-       message:'What is your github username?'
-     },  
+    }, 
     {
         type: 'input',
         name: 'title',
@@ -24,10 +18,27 @@ const questions = [
       {
         type: 'input',
         name: 'description',
-        message: 'Please provide a short description of your application?',
+        message: 'Please provide a short description of your application-',
       },
       {
-      
+        type: 'input',
+        name: 'installation',
+        message: 'What command should be run to install dependencies?',
+      },
+      {
+        type: 'input',
+        name: 'tests',
+        message: 'What command should be run to run tests?',
+      },
+      { 
+        type: 'input',
+        name: 'usage',
+        message: 'What does the user need to know about using the repo?',
+      },
+      {
+        type: 'input',
+        name: 'contributing',
+        message: 'What does the user need to know about contributing to the repo?',
       },
       {
         type: 'list',
@@ -62,7 +73,13 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions)
+  .then(function(data) {
+  let fileContent = generateMarkdown(data);
+  writeToFile(fileContent)
+  })
+}
 
 // Function call to initialize app
 init();
