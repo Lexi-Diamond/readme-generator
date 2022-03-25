@@ -77,7 +77,8 @@ function init() {
   inquirer.prompt(questions)
   .then(function(data) {
   let fileContent = generateMarkdown(data);
-  writeToFile(fileContent)
+  writeToFile('./dist/readme.md', fileContent)
+  console.log(data)
   })
 }
 
