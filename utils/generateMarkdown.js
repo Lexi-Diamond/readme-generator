@@ -69,7 +69,7 @@ function generateMarkdown(data) {
   ## Contributing: ${data.contributing}
   ## Tests: ${data.tests}
   
-  ## Questions: Github-${data.questions}, Email-${data.email}`
+  ## Questions: Github-${data.github}, Email-${data.linkedin}`
           
 };
 
